@@ -19,7 +19,7 @@ def hbnb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def c_is_fun(text):
-    text.replace("_", " ")
+    text = text.replace("_", " ")
     return f"C {escape(text)}"
 
 
