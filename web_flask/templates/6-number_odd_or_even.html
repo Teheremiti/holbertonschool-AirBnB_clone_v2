@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <HTML lang="ENG">
-
-<HEAD>
-    <META charset="utf8">
-    <META name="viewport" content="width=device-width, initial-scale=1" />
-    <TITLE>AirBnB clone</TITLE>
-</HEAD>
-
-<BODY>
-    {% n % 2 == 0 %}
-        <H1>Number: {{ n }} is even</H1>
-    {% else %}
-        <H1>Number: {{ n }} is odd</H1>
-</BODY>
-
+    <HEAD>
+        <META charset="utf8">
+        <META name="viewport" content="width=device-width, initial-scale=1" />
+        <TITLE>AirBnB clone</TITLE>
+    </HEAD>    
+    <BODY>
+        {% if n % 2 == 0 %}
+            <H1>Number: {{ n }} is even</H1>
+        {% else %}
+            <H1>Number: {{ n }} is odd</H1>
+        {% endif %}
+    </BODY>
 </HTML>
