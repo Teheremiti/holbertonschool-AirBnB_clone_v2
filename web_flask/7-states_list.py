@@ -8,17 +8,17 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.teardown_appcontext
-def teardown():
-    """Will remove the current session after each request"""
-    storage.close()
-
-
 @app.route("/states_list", strict_slashes=False)
 def list_states():
     """Displays an HTML page with the list of all State objects"""
     states_list = storage.all(State)
     return render_template("7-states_list.html", states=states_list)
+
+
+@app.teardown_appcontext
+def teardown():
+    """Will remove the current session after the each request"""
+    storage.close()
 
 
 if __name__ == "__main__":
